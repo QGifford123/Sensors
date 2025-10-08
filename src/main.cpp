@@ -19,9 +19,9 @@ motor Motor2 = motor(PORT2, ratio18_1, false);
 
 bumper bumpswitch = bumper(Brain.ThreeWirePort.A);
 pot Potentiometer = pot(Brain.ThreeWirePort.C);
-optical opticalSensor = optical(PORT19);
-distance distanceSensor = distance(PORT10);
-inertial Inertial = inertial(PORT11);
+optical opticalSensor = optical(PORT9); //Ignore the optical in port 10, we won't use it
+distance distanceSensor = distance(PORT19);
+inertial Inertial = inertial(PORT20);
 
 void detectTwoInputs() {
 
@@ -32,7 +32,7 @@ void detectTwoInputs() {
 
 void correctRotation() {
 
-    /*While bump switch one is held down, rotate the wheel on Motor2 freely.
+    /*While bump switch one is held down, rotate the wheel on Motor1 freely.
     Once it is released, automatically spin the wheel until it is back at 0 deg
     of rotation.*/
 
@@ -40,7 +40,7 @@ void correctRotation() {
 
 void scaleSpeed() {
     
-    /*When button L1 is pressed on the controller, spin Motor2 at 80 percent.
+    /*When button L1 is pressed on the controller, spin Motor1 at 80 percent.
     When it is pressed again, raise the speed to 90 percent. Subsequent presses
     of L1 should toggle between the two speed values*/
 
