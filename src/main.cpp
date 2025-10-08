@@ -20,8 +20,8 @@ motor Motor2 = motor(PORT2, ratio18_1, false);
 bumper bumpswitch = bumper(Brain.ThreeWirePort.A);
 pot Potentiometer = pot(Brain.ThreeWirePort.C);
 optical opticalSensor = optical(PORT9); //Ignore the optical in port 10, we won't use it
-distance distanceSensor = distance(PORT19);
-inertial Inertial = inertial(PORT20);
+distance distanceSensor = distance(PORT20);
+//inertial Inertial = inertial(PORT19);
 
 void detectTwoInputs() {
 
